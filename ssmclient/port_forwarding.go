@@ -166,7 +166,7 @@ func messageChannel(c datachannel.DataChannel, errCh chan error) chan []byte {
 }
 
 func createListener(port int) (net.Listener, error) {
-	l, err := net.Listen("tcp", net.JoinHostPort("", strconv.Itoa(port)))
+	l, err := net.Listen("tcp", net.JoinHostPort("localhost", strconv.Itoa(port)))
 	if err != nil {
 		return nil, err
 	}
